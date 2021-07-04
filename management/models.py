@@ -14,6 +14,7 @@ class Student(models.Model):
     # def get_absolute_url(self):
     #     return reverse()
     
+#model defining book information
 class Book(models.Model):
     title = models.CharField(max_length=250)
     author = models.CharField(max_length=50)
@@ -25,6 +26,6 @@ class Book(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('book_detail', args=[str(self.id)])
+        return reverse('book_detail', args=[str(self.pk)])
 
 

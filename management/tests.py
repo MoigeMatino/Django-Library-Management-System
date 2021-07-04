@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
-from .models import *
+from .models import Book
 
 class BookTests(TestCase):
     def setUp(self):
@@ -11,7 +11,7 @@ class BookTests(TestCase):
                     password='secret'
         )
 
-        self.book = Book.objects.create(
+        self.book = Book(
             title='A good title',
             author=self.user,
             genre='best genre',
